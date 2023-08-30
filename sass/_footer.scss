@@ -1,0 +1,181 @@
+.footer {
+  grid-column: 1 / -1;
+  margin-top: 20rem;
+  position: relative;
+
+  @include respond(small) {
+    margin-top: 25rem;
+  }
+
+  &__top {
+    // position: absolute;
+    background-color: $color-primary-light;
+    text-align: center;
+    max-width: 60%;
+    padding: 2rem 4rem;
+
+    & > *:not(:last-child) {
+      margin-bottom: 1.5rem;
+    }
+    position: absolute;
+    top: -40%;
+    left: 20%;
+
+    @include respond(medium) {
+      left: 25%;
+      top: -50%;
+      max-width: 50%;
+    }
+
+    @include respond(small) {
+      max-width: 70%;
+      left: 15%;
+      top: -40%;
+    }
+  }
+
+  &__form {
+    display: flex;
+    position: relative;
+
+    @include respond(medium) {
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+  }
+
+  &__input {
+    // display: block;
+    margin-right: 2rem;
+    flex-grow: 1;
+    border: none;
+    border-radius: 10rem;
+    padding: 0 1rem;
+
+    @include respond(medium) {
+      font-size: 0.8rem;
+      padding: 0.8rem;
+      margin-right: 1rem;
+    }
+
+    @include respond(small) {
+      margin-bottom: 1rem;
+    }
+  }
+
+  &__input::placeholder {
+    font-size: 0.8rem;
+  }
+
+  &__input:focus {
+    outline: none;
+  }
+
+  &__input:invalid + &__error::before {
+    content: "Please enter a valid email address";
+    color: red;
+    position: absolute;
+    font-size: 0.8rem;
+    left: 1rem;
+    bottom: -1.5rem;
+
+    @include respond(medium) {
+      display: none;
+    }
+  }
+
+  // &__input::
+
+  &__sub {
+    background-color: $color-primary-darker;
+    display: grid;
+    grid-template-rows: max-content, 1fr;
+    grid-template-columns: 30% repeat(4, 1fr);
+    padding: 8rem 5rem 3rem;
+    row-gap: 2rem;
+    column-gap: 2rem;
+    justify-items: center;
+
+    @include respond(smallest) {
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(5, max-content);
+      row-gap: 2rem;
+      justify-items: start;
+      // padding: 0.8;
+    }
+  }
+
+  &__logo {
+    grid-row: 1 / 2;
+    justify-self: start;
+    width: 8rem;
+  }
+
+  &__list {
+    grid-row: 2;
+    display: flex;
+    flex-direction: column;
+
+    & > *:not(:last-child) {
+      margin-bottom: 1rem;
+    }
+
+    @include respond(small) {
+      grid-row: unset;
+    }
+  }
+
+  &__list--1 {
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  &__list-item {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  &__list-item:hover,
+  &__list-item:active {
+    cursor: pointer;
+    color: $color-white;
+  }
+
+  // &__list-item:hover::after {
+  //   content: ">";
+  //   padding-left: 0.5rem;
+  //   color: $color-white;
+  // }
+
+  &__img {
+    width: 1rem;
+    margin-right: 1rem;
+  }
+
+  &__social-icons {
+    grid-row: 2 / 3;
+
+    & > *:not(:last-child) {
+      margin-right: 0.5rem;
+    }
+
+    @include respond(smallest) {
+      grid-row: unset;
+    }
+  }
+
+  &__social-icon {
+    width: 2rem;
+    filter: invert(100%) sepia(0%) saturate(7487%) hue-rotate(333deg)
+      brightness(116%) contrast(103%);
+  }
+
+  &__social-icon:hover,
+  &__social__icon:active {
+    filter: invert(77%) sepia(63%) saturate(232%) hue-rotate(125deg)
+      brightness(93%) contrast(88%);
+    cursor: pointer;
+  }
+}

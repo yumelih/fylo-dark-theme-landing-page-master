@@ -1,0 +1,51 @@
+.nav {
+  background-color: $color-primary-light;
+  background-origin: padding-box;
+  font-family: $font-primary;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 3rem 2rem;
+  grid-column: 1 / -1;
+
+  &__logo {
+    width: 10rem;
+    height: auto;
+
+    @include respond(medium) {
+      width: 8rem;
+    }
+
+    @include respond(small) {
+      width: 7rem;
+    }
+  }
+
+  &__navigation {
+  }
+
+  &__list {
+    list-style: none;
+    display: flex;
+
+    & > *:not(:last-child) {
+      margin-right: 1rem;
+    }
+  }
+
+  &__item {
+  }
+
+  &__link:link,
+  &__link:visited {
+    text-decoration: none;
+    color: $color-gray;
+    transition: all 0.3s;
+  }
+
+  &__link:active,
+  &__link:hover {
+    color: $color-white;
+    text-decoration: underline;
+  }
+}

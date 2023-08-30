@@ -1,0 +1,66 @@
+.slogan {
+  grid-column: center-start / center-end;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  column-gap: 2rem;
+  align-items: center;
+  margin-top: $margin-between-rows;
+
+  @include respond(medium) {
+    row-gap: 2rem;
+    justify-items: center;
+  }
+
+  @include respond(small) {
+    padding: 4rem;
+    grid-column: 1 / -1;
+  }
+
+  &__img {
+    width: 30rem;
+    grid-column: 1 / 2;
+
+    @include respond(small) {
+      object-fit: cover;
+      width: 70%;
+      max-height: 100%;
+    }
+  }
+
+  &__text-box {
+    display: grid;
+    gap: 1rem;
+  }
+
+  &__link {
+    color: $color-accent-primary;
+    width: fit-content;
+    border-bottom: 1px solid $color-accent-primary;
+    padding-bottom: 0.8rem;
+    display: flex;
+    align-items: end;
+    transition: all 0.2s;
+  }
+
+  &__link::after {
+    content: url("../images/icon-arrow.svg");
+    display: flex;
+    align-items: end;
+    padding-left: 0.5rem;
+    transition: all 0.2s;
+  }
+
+  &__link:hover,
+  &__link:active {
+    color: $color-white;
+    border-bottom: 1px solid $color-white;
+    cursor: pointer;
+  }
+
+  &__link:hover::after,
+  &__link:active::after {
+    filter: invert(0%) sepia(3%) saturate(19%) hue-rotate(33deg)
+      brightness(100%) contrast(100%);
+    cursor: pointer;
+  }
+}

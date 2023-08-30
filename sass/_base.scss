@@ -1,0 +1,96 @@
+// COLORS
+$color-primary-lighter: hsl(219, 30%, 18%);
+$color-primary-light: hsl(217, 28%, 15%);
+$color-primary: hsl(218, 28%, 13%);
+$color-primary-darker: hsl(216, 53%, 9%);
+
+$color-accent-primary: hsl(176, 68%, 64%);
+$color-accent-secondary: hsl(198, 60%, 50%);
+
+$color-white: hsl(0, 0%, 100%);
+$color-gray: #b9b9b9;
+
+// FONTS
+$font-primary: "Raleway", sans-serif;
+$font-secondary: "Open Sans", sans-serif;
+
+$margin-between-rows: 4rem;
+
+// MEDIA QUERY MANAGER
+/*
+1st breakpoint: 1200px/16 => 64.5em => large
+2st breakpoint: 900px/16 =>  56.25em => medium
+3st breakpoint: 600px/16 => 37.5em => small
+4st breakpoint: 400px/16 => 25em => smallest
+*/
+
+@mixin respond($breakpoint) {
+  @if $breakpoint == smallest {
+    @media only screen and (max-width: 25em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == small {
+    @media only screen and (max-width: 37.5em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == medium {
+    @media only screen and (max-width: 56.25em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == large {
+    @media only screen and (max-width: 64.25em) {
+      @content;
+    }
+  }
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 87.5%; //14/16px
+  background-color: $color-primary;
+
+  @include respond(large) {
+    font-size: 75%; //12/16px
+  }
+
+  @include respond(medium) {
+    font-size: 68.25%; //11/16px
+  }
+
+  @include respond(small) {
+    font-size: 56.25%; //9/16px
+  }
+}
+
+body {
+  font-family: $font-secondary;
+  font-weight: 400;
+  max-width: 1440px;
+  margin: 0 auto;
+  color: $color-gray;
+}
+
+.container {
+  display: grid;
+  grid-template-rows: 1fr 80vh repeat(2, max-content), 60vh 1fr;
+  grid-template-columns:
+    [first-side-start] minmax(8rem, 1fr) [first-side-end center-start] repeat(
+      8,
+      minmax(min-content, 1fr)
+    )
+    [center-end last-side-start] minmax(8rem, 1fr);
+}

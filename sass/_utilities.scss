@@ -1,0 +1,51 @@
+.heading-2 {
+  color: $color-white;
+  font-family: $font-primary;
+  font-size: 2rem;
+
+  @include respond(smallest) {
+    font-size: 1.5rem;
+  }
+}
+
+.heading-4 {
+  color: $color-white;
+  font-size: 1.3rem;
+}
+
+.text {
+  color: $color-gray;
+  font-size: 1rem;
+}
+
+.text-sm {
+  font-size: 0.8rem;
+}
+
+.btn {
+  padding: 1rem 5rem;
+  border-radius: 4rem;
+  color: $color-white;
+  font-family: $font-primary;
+  font-weight: 700;
+  background-image: linear-gradient(
+    to right,
+    $color-accent-primary,
+    40%,
+    $color-accent-secondary
+  );
+  border: none;
+
+  &:hover,
+  &:active {
+    background: $color-accent-primary;
+  }
+
+  @include respond(medium) {
+    font-size: 0.8rem;
+  }
+
+  @include respond(smallest) {
+    padding: 1rem 3rem;
+  }
+}

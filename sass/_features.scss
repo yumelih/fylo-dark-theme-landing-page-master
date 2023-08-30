@@ -1,0 +1,26 @@
+.features {
+  grid-column: center-start / center-end;
+
+  margin-top: $margin-between-rows;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+
+  @include respond(small) {
+    grid-column: 1 / -1;
+    row-gap: 1rem;
+  }
+
+  &__box {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 4rem;
+    text-align: center;
+  }
+
+  &__img {
+    width: auto;
+    height: 4rem;
+  }
+}
