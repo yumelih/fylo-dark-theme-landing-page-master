@@ -30,8 +30,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [FrontendMentor.io](https://www.frontendmentor.io/solutions/fylo-dark-theme-landing-page-using-scss-and-css-grid-lojOll86fk)
+- Live Site URL: [Live Site](https://yumelih.github.io/fylo-dark-theme-landing-page-master/)
 
 ## My process
 
